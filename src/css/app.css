@@ -1,0 +1,114 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../image/background.jpg");
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+}
+
+.min-h-60 {
+  min-height: 60vh;
+  min-height: 60svh;
+}
+
+.level-box {
+  margin: 30px auto;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.level-box p {
+  margin-bottom: 0;
+}
+
+.easy-level:hover,
+.easy-level.active {
+  background-color: var(--bs-teal);
+}
+
+.medium-level:hover,
+.medium-level.active {
+  background-color: var(--bs-orange);
+}
+
+.hard-level:hover,
+.hard-level.active {
+  background-color: var(--bs-red);
+}
+
+.play-btn {
+  width: 100%;
+  max-width: 352px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 12px;
+}
+
+.quiz-menu {
+  max-width: 480px;
+  margin: 1rem auto;
+}
+
+.sol-group {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 2rem;
+}
+
+.control-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-group button {
+  width: 100%;
+  max-width: 130px;
+}
+
+.btn-inactive {
+  display: none;
+}
+
+/* mobile support */
+.carousel-inner {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel-inner > .carousel-item {
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: -o-transform 0.6s ease;
+  -moz-transition: transform 0.6s ease, -moz-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease,
+    -moz-transform 0.6s ease, -o-transform 0.6s ease;
+}
