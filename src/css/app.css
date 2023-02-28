@@ -18,6 +18,10 @@ p {
   color: white;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
 header h1 {
   margin-bottom: 1rem;
 }
@@ -80,6 +84,10 @@ header h1 {
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 2rem;
+}
+
+.sol-group .btn {
+  font-size: 0.875rem;
 }
 
 .control-group {
