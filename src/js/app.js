@@ -1,5 +1,6 @@
 import { quizUI } from "./quizUI.js";
 import { selectedLevel } from "./selectLevel.js";
+import { createToast } from "./toast.js";
 
 const fetchQuizData = async function () {
   const choosenDifficulty = localStorage.getItem("questionLevel");
@@ -12,6 +13,7 @@ const fetchQuizData = async function () {
     if (response.ok) {
       const data = await response.json();
       quizUI(data.results);
+      document.querySelector(".quiz-spinner").classList.add("d-none");
     }
   } catch (err) {
     console.error(err);
@@ -24,10 +26,17 @@ const startQuiz = function () {
     if (localStorage.getItem("questionLevel")) {
       document.querySelector(".quiz-menu").classList.remove("d-none");
       document.querySelector(".load-screen").classList.add("d-none");
+      document.querySelector(".quiz-spinner").classList.remove("d-none");
       localStorage.setItem("quiz-status", true);
       fetchQuizData();
     } else {
-      alert("choose the quiz level first!");
+      createToast(
+        "Alert Message",
+        "Choose the difficulty level first to continue."
+      );
+
+      document.querySelector(".container").style.zIndex = -9999;
+
       return;
     }
   });

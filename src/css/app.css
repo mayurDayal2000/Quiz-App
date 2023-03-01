@@ -104,6 +104,21 @@ header h1 {
   display: none;
 }
 
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.toast-container {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.toast-container p {
+  color: #222;
+  font-size: 1rem;
+}
+
 /* mobile support */
 .carousel-inner {
   -webkit-transform: translate3d(0, 0, 0);
