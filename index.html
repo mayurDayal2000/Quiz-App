@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer Science | Quiz App</title>
+    <link rel="shortcut icon" href="./src/image/favicon.svg" type="image/x-icon" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
@@ -16,49 +17,48 @@
     <script src="./src/js/app.js" type="module"></script>
 </head>
 
-<body class="d-flex align-items-center justify-content-center p-4">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <header class="p-3">
-                    <h1>Quiz App</h1>
-                    <p>Discover how much you know about computer science!</p>
-                </header>
-            </div>
-        </div>
+<body>
+    <main class="d-flex align-items-center justify-content-center p-4">
+        <section class="container">
+            <section class="row">
+                <article class="col">
+                    <header class="p-3">
+                        <h1>Quiz App</h1>
+                        <p>Discover how much you know about computer science!</p>
+                    </header>
+                </article>
+            </section>
 
-        <div class="quiz-spinner text-center d-none">
-            <div class="spinner-border text-danger" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-
-        <div class="load-screen">
-            <div class="row align-items-center min-h-60">
-                <div class="col">
-                    <h2>Choose the level</h2>
-
-                    <div class="level-box easy-level">
-                        <p>Easy</p>
-                    </div>
-
-                    <div class="level-box medium-level">
-                        <p>Medium</p>
-                    </div>
-
-                    <div class="level-box hard-level">
-                        <p>Hard</p>
-                    </div>
+            <aside class="quiz-spinner text-center d-none">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
+            </aside>
+
+            <section class="load-screen">
+                <section class="row align-items-center min-h-60">
+                    <article class="col">
+                        <h2>Choose the level</h2>
+
+                        <ul>
+                            <li class="level-box easy-level">Easy</li>
+                            <li class="level-box medium-level">Medium</li>
+                            <li class="level-box hard-level">Hard</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <button type="button" class="btn btn-outline-primary play-btn">
+                    Start
+                </button>
+            </section>
+
+            <div id="carouselContainer" class="carousel slide quiz-menu d-none" data-bs-touch="false"
+                data-bs-wrap="false">
+                <!-- dynamic data insertion-->
             </div>
-
-            <button class="btn btn-outline-primary play-btn">Start</button>
-        </div>
-
-        <div id="carouselContainer" class="carousel slide quiz-menu d-none" data-bs-touch="false" data-bs-wrap="false">
-            <!-- dynamic data insertion-->
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>

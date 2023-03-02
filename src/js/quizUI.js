@@ -1,3 +1,7 @@
+import { createToast } from "./toast.js";
+
+let userScore = 0;
+
 export const quizUI = function (datas) {
   // create the main container fragment
   const carouselFrags = document.createDocumentFragment();
@@ -37,11 +41,27 @@ export const quizUI = function (datas) {
 
     // create the solution options
     for (let j = 0; j < 4; j++) {
-      const optionBtn = document.createElement("button");
-      optionBtn.classList.add("btn", "btn-outline-light");
-      optionBtn.type = "button";
-      optionBtn.innerHTML = optionAvail[j];
-      optionGroup.appendChild(optionBtn);
+      const optionInput = document.createElement("input");
+      const optionLabel = document.createElement("label");
+
+      optionInput.type = "radio";
+      optionInput.classList.add("btn-check");
+      optionInput.name = `section${i + 1}-radio`;
+      optionInput.id = `section${i + 1}-radio${j + 1}`;
+      optionInput.autocomplete = "off";
+      optionInput.value = optionAvail[j];
+      optionGroup.appendChild(optionInput);
+
+      optionLabel.classList.add("btn", "btn-outline-light");
+      optionLabel.htmlFor = `section${i + 1}-radio${j + 1}`;
+      optionLabel.innerHTML = optionAvail[j];
+      optionGroup.appendChild(optionLabel);
+
+      optionInput.onclick = function () {
+        if (this.value === correct_answer) {
+          userScore++;
+        }
+      };
     }
   }
 
@@ -70,3 +90,25 @@ export const quizUI = function (datas) {
 
   document.getElementById("carouselContainer").appendChild(carouselFrags);
 };
+
+export function showSubmitBtn() {
+  const sectionItems = document.querySelectorAll(".quiz-screen .carousel-item");
+  const nextBtn = document.querySelector(".control-group .btn-primary");
+  const carouselContainer = document.getElementById("carouselContainer");
+
+  carouselContainer.addEventListener("slid.bs.carousel", () => {
+    const lastSection = sectionItems[sectionItems.length - 1];
+
+    if (lastSection?.classList.contains("active")) {
+      nextBtn.textContent = "Submit";
+      nextBtn.classList.replace("btn-primary", "btn-success");
+
+      nextBtn.onclick = function () {
+        createToast("Score card", `You scored ${userScore} / 10.`, true);
+      };
+    } else {
+      nextBtn.textContent = "Next";
+      nextBtn.classList.replace("btn-success", "btn-primary");
+    }
+  });
+}
