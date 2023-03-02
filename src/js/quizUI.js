@@ -105,6 +105,7 @@ export function showSubmitBtn() {
 
       nextBtn.onclick = function () {
         createToast("Score card", `You scored ${userScore} / 10.`, true);
+        userScore = 0;
       };
     } else {
       nextBtn.textContent = "Next";
