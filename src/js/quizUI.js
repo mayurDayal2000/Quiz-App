@@ -91,6 +91,7 @@ export const quizUI = function (datas) {
   document.getElementById("carouselContainer").appendChild(carouselFrags);
 };
 
+
 export function showSubmitBtn() {
   const sectionItems = document.querySelectorAll(".quiz-screen .carousel-item");
   const nextBtn = document.querySelector(".control-group .btn-primary");

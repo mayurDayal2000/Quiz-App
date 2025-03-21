@@ -1,6 +1,8 @@
+
 export function selectedLevel() {
   const levels = document.querySelectorAll(".level-box");
 
+  
   function handleClick(event) {
     const clickedLevel = event.currentTarget;
     const levelClass = clickedLevel.classList[1];
