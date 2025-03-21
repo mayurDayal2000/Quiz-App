@@ -91,6 +91,10 @@ export const quizUI = function (datas) {
   document.getElementById("carouselContainer").appendChild(carouselFrags);
 };
 
+/**
+ * Function to show or change the text and behavior of the submit button based on the active section in the quiz screen carousel.
+ * @throws {Error} If the required elements are not found in the DOM.
+ */
 export function showSubmitBtn() {
   const sectionItems = document.querySelectorAll(".quiz-screen .carousel-item");
   const nextBtn = document.querySelector(".control-group .btn-primary");

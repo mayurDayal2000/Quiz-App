@@ -1,6 +1,16 @@
+/**
+ * Function to handle the selection of a level.
+ * @throws {Error} If there is an issue with accessing or setting localStorage.
+ */
 export function selectedLevel() {
   const levels = document.querySelectorAll(".level-box");
 
+  /**
+   * Handles the click event on a level element.
+   * 
+   * @param {Event} event - The click event object.
+   * @throws {TypeError} - If event is not provided.
+   */
   function handleClick(event) {
     const clickedLevel = event.currentTarget;
     const levelClass = clickedLevel.classList[1];
